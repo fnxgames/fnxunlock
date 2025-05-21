@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import sqlite3
+import os
 
 app = Flask(__name__)
 
@@ -53,6 +54,10 @@ def novo_cliente():
 
 @app.route("/clientes", methods=["GET"])
 def listar_clientes():
+    token = request.args.get("token")
+    if token != "2939Melv1n":
+        return jsonify({"erro": "Acesso não autorizado"}), 403
+
     conn = sqlite3.connect("clientes.db")
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
@@ -77,8 +82,6 @@ def alterar_status():
     conn.close()
 
     return jsonify({"mensagem": "Status atualizado com sucesso"}), 200
-
-import os
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
