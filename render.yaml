@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: servidor-licenca
+    env: python
+    buildCommand: ""
+    startCommand: "python app.py"
+    plan: free
