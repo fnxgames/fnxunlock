@@ -1,5 +1,9 @@
 {
   "autorizados": [
-    "33DA1854-429B-11EC-EF94-641C67DCD88C"
+    "33DA1854-429B-11EC-EF94-641C67DCD88C",
+    {
+      "uuid": "414E1D6D-BE1B-C2E2-2F2D-0071C215CC12",
+      "expiracao": "2025-08-28 11:15:42"
+    }
   ]
 }
